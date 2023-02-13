@@ -1,40 +1,29 @@
-import * as assert  from  'assert';
-
-// ... Ton code ici ...
-class BankCustomer{
+class Person {
+    
     private name: string;
-    private pin: string;
-
-    constructor(name: string, pin: string){
-        this.name = name;
-        this.pin = pin;
+    private age: number;
+    constructor(myName: string, myAge: number){
+        this.name = myName;
+        this.age = myAge;
     }
-    public getName(): string {
-        return this.name;
+    tellMyName(): string{
+        return 'I am '+ this.name;
+        
     }
-    public verifyPinInput(input: string): boolean {
-       if(this.pin == input){
-        console.log("c'est le bon code");
-       return true;
-       
-       
-        
-       }
-       else{
-        console.log("c'est pas le bon code");
-        return false;
-        
-        
-       }
+    tellMyAge(): string {
+        return 'I am '+ this.age + ' years old';
+    }
+    tellEverithing(){
+        console.log(this.tellMyName(),',',  this.tellMyAge());
     }
 }
 
-// Tests
-
-const customer = new BankCustomer('John Doe', '3579');
-
-assert.equal(typeof customer.getName, 'function');
-assert.equal(typeof customer.verifyPinInput, 'function');
-assert.equal(customer.getName(), 'John Doe');
-assert.ok(customer.verifyPinInput('3579'));
+const person1 = new Person('John', 40);
+const person2 = new Person('Mary', 35);
+var table = [person1,person2];
+table.forEach(element => {
+    element.tellEverithing();
+});
+// person1.tellEverithing();
+// person2.tellEverithing();
 
