@@ -1,30 +1,32 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
+var assert = require("assert");
 // ... Ton code ici ...
-class BankCustomer {
-    constructor(name, pin) {
+var BankCustomer = /** @class */ (function () {
+    function BankCustomer(name, pin) {
         this.name = name;
         this.pin = pin;
     }
-    getName() {
-        this.name;
-    }
-    verifyPinInput(input) {
+    BankCustomer.prototype.getName = function () {
+        return this.name;
+    };
+    BankCustomer.prototype.verifyPinInput = function (input) {
         if (this.pin == input) {
-            true;
-            console.log('cest bon');
+            console.log("c'est le bon code");
+            return true;
         }
         else {
-            false;
-            console.log('cest pas bon');
+            console.log("c'est pas le bon code");
+            return false;
         }
-    }
-}
+    };
+    return BankCustomer;
+}());
 // Tests
-const customer = new BankCustomer('John Doe', '3579');
+var customer = new BankCustomer('John Doe', '3579');
 console.log(customer);
 console.log(customer.verifyPinInput('3579'));
-// assert.equal(typeof customer.getName, 'function');
-// assert.equal(typeof customer.verifyPinInput, 'function');
-// assert.equal(customer.getName(), 'John Doe');
-// assert.ok(customer.verifyPinInput('3579'));
+assert.equal(typeof customer.getName, 'function');
+assert.equal(typeof customer.verifyPinInput, 'function');
+assert.equal(customer.getName(), 'John Doe');
+assert.ok(customer.verifyPinInput('3579'));

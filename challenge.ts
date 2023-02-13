@@ -32,8 +32,6 @@ class BankCustomer{
 // Tests
 
 const customer = new BankCustomer('John Doe', '3579');
-console.log(customer);
-console.log(customer.verifyPinInput('3579'));
 
 assert.equal(typeof customer.getName, 'function');
 assert.equal(typeof customer.verifyPinInput, 'function');
