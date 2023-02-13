@@ -9,19 +9,21 @@ class BankCustomer{
         this.name = name;
         this.pin = pin;
     }
-    public getName(): void {
-         this.name;
+    public getName(): string {
+        return this.name;
     }
-    public verifyPinInput(input: string): void{
+    public verifyPinInput(input: string): boolean {
        if(this.pin == input){
-        true;
-       console.log('cest bon');
+        console.log("c'est le bon code");
+       return true;
+       
        
         
        }
        else{
-        false;
-        console.log('cest pas bon');
+        console.log("c'est pas le bon code");
+        return false;
+        
         
        }
     }
@@ -33,8 +35,8 @@ const customer = new BankCustomer('John Doe', '3579');
 console.log(customer);
 console.log(customer.verifyPinInput('3579'));
 
-// assert.equal(typeof customer.getName, 'function');
-// assert.equal(typeof customer.verifyPinInput, 'function');
-// assert.equal(customer.getName(), 'John Doe');
-// assert.ok(customer.verifyPinInput('3579'));
+assert.equal(typeof customer.getName, 'function');
+assert.equal(typeof customer.verifyPinInput, 'function');
+assert.equal(customer.getName(), 'John Doe');
+assert.ok(customer.verifyPinInput('3579'));
 
