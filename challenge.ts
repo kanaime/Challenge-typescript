@@ -16,8 +16,6 @@ class BankCustomer{
        if(this.pin == input){
         console.log("c'est le bon code");
        return true;
-       
-       
         
        }
        else{
