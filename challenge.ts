@@ -1,16 +1,40 @@
-// challenge.ts
-const prettyPrintWilder = (users: any[]) => {
-  users.map((user: { name: string; age: number; birthday: any }) => {
-    console.log(`${user.name} is ${user.age} years old`);
-  });
-};
+import * as assert  from  'assert';
 
-const wilders = [];
-const user1 = { name: "Pierre", age: 23 };
-const user2 = { name: "Paul", birthday: "10/02/1990" };
-const user3 = { name: "Jacques", age: 25 };
-wilders.push(user1);
-wilders.push(user2);
-wilders.push(user3);
-prettyPrintWilder(wilders);
-console.log(wilders);
+// ... Ton code ici ...
+class BankCustomer{
+    private name: string;
+    private pin: string;
+
+    constructor(name: string, pin: string){
+        this.name = name;
+        this.pin = pin;
+    }
+    public getName(): void {
+         this.name;
+    }
+    public verifyPinInput(input: string): void{
+       if(this.pin == input){
+        true;
+       console.log('cest bon');
+       
+        
+       }
+       else{
+        false;
+        console.log('cest pas bon');
+        
+       }
+    }
+}
+
+// Tests
+
+const customer = new BankCustomer('John Doe', '3579');
+console.log(customer);
+console.log(customer.verifyPinInput('3579'));
+
+// assert.equal(typeof customer.getName, 'function');
+// assert.equal(typeof customer.verifyPinInput, 'function');
+// assert.equal(customer.getName(), 'John Doe');
+// assert.ok(customer.verifyPinInput('3579'));
+

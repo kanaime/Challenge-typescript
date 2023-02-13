@@ -1,15 +1,30 @@
-// challenge.ts
-var prettyPrintWilder = function (users) {
-    users.map(function (user) {
-        console.log("".concat(user.name, " is ").concat(user.age, " years old"));
-    });
-};
-var wilders = [];
-var user1 = { name: "Pierre", age: 23 };
-var user2 = { name: "Paul", birthday: "10/02/1990" };
-var user3 = { name: "Jacques", age: 25 };
-wilders.push(user1);
-wilders.push(user2);
-wilders.push(user3);
-prettyPrintWilder(wilders);
-console.log(wilders);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+// ... Ton code ici ...
+class BankCustomer {
+    constructor(name, pin) {
+        this.name = name;
+        this.pin = pin;
+    }
+    getName() {
+        this.name;
+    }
+    verifyPinInput(input) {
+        if (this.pin == input) {
+            true;
+            console.log('cest bon');
+        }
+        else {
+            false;
+            console.log('cest pas bon');
+        }
+    }
+}
+// Tests
+const customer = new BankCustomer('John Doe', '3579');
+console.log(customer);
+console.log(customer.verifyPinInput('3579'));
+// assert.equal(typeof customer.getName, 'function');
+// assert.equal(typeof customer.verifyPinInput, 'function');
+// assert.equal(customer.getName(), 'John Doe');
+// assert.ok(customer.verifyPinInput('3579'));
